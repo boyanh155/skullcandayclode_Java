@@ -1,4 +1,7 @@
-com\k19\controllers\employeeServlet.class
-com\k19\DAO\employeeDAO.class
-com\k19\models\employeeModel.class
-com\k19\controllers\registerNav.class
+com\k19\DAO\memberDAO.class
+com\k19\controllers\register.class
+com\k19\utils\userService.class
+com\k19\models\member.class
+connection\postgresJDBCConnection.class
+com\k19\controllers\login.class
+com\k19\controllers\memberNav.class

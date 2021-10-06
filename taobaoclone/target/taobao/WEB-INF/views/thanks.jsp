@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Thanks for enroll</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/assets/css/thanks.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/assets/css/oneshot/thanks.css">
     </head>
 
     <body>
@@ -21,10 +21,9 @@
                     <th scope="col">First name</th>
                     <th scope="col">Last name</th>
                     <th scope="col">User name</th>
-                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Contact</th>
-                    <th scope="col">gentle</th>
-
+                    <th scope="col">Gentle</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +32,7 @@
                     <td>${user.firstName}</td>
                     <td>${user.lastName}</td>
                     <td>${user.username}</td>
-                    <td>${user.address}</td>
+                    <td>${user.email}</td>
                     <td>${user.contact}</td>
                     <td>${user.gentle}</td>               
                 </tr>

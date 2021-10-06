@@ -1,4 +1,7 @@
-D:\taobaoclone_Java\taobaoclone\src\main\java\com\k19\controllers\employeeServlet.java
-D:\taobaoclone_Java\taobaoclone\src\main\java\com\k19\controllers\registerNav.java
-D:\taobaoclone_Java\taobaoclone\src\main\java\com\k19\DAO\employeeDAO.java
-D:\taobaoclone_Java\taobaoclone\src\main\java\com\k19\models\employeeModel.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\utils\userService.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\connection\postgresJDBCConnection.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\DAO\memberDAO.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\memberNav.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\login.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\register.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\models\member.java

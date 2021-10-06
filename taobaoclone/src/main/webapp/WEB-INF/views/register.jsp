@@ -1,6 +1,8 @@
 <%-- <!-- <%-- only sample purpose --%>
+<%-- <%@ include file="${pageContext.request.contextPath}/WEB-INF/views/common/footer.jsp" %> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -10,7 +12,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Employee Register page</title>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-            <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/assets/css/register.css">
+            <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/assets/css/member/register.css">
 
         </head>
 
@@ -32,7 +34,7 @@
                         </div>
                         <div class="col-md-2">
                             <label class="my-1 mr-2" for="gentle">Gentle</label>
-                    <select name="gentle" class="custom-select my-1 mr-sm-2" id="gentle">
+                            <select name="gentle" class="custom-select my-1 mr-sm-2" id="gentle">
                             <option selected>Choose...</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -52,8 +54,8 @@
                     </div>
                     <div class="form-row mt-4 flex-column align-center">
                         <div class="col-md-8">
-                            <label for="address">Address</label>
-                            <input id="address" name="address" type="text" class="form-control" placeholder="Your Address">
+                            <label for="address">Email</label>
+                            <input id="address" name="email" type="email" class="form-control" placeholder="Your Email">
                         </div>
                         <div class="col-md-8">
                             <label for="contact">Contact</label>
@@ -74,6 +76,9 @@
                     </div>
                 </form>
             </div>
+    <%-- <c:import url="${pageContext.request.contextPath}/WEB-INF/views/common/footer.jsp" /> --%>
+    <%-- <jsp:include page="<%=request.getContextPath()%>/WEB-INF/views/common/footer.jsp" /> --%>
+
 
 
             <!-- confirm modal -->

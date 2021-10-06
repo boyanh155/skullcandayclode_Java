@@ -2,24 +2,14 @@
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://Java.Sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-  <!--  /sign-up  -->
-  <servlet>
-    <servlet-name>registerNavServlet</servlet-name>
-    <servlet-class>com.k19.controllers.registerNav</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>registerNavServlet</servlet-name>
-    <url-pattern>/sign-up</url-pattern>
-  </servlet-mapping>
-  <!-- /sign-up/confirm -->
-  <servlet>
+  <!-- <servlet>
     <servlet-name>registerConfirmServlet</servlet-name>
     <servlet-class>com.k19.controllers.employeeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>registerConfirmServlet</servlet-name>
     <url-pattern>/sign-up/confirm</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <!-- css,js -->
   <servlet-mapping>
     <servlet-name>default</servlet-name>
@@ -31,6 +21,29 @@
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
+    <welcome-file>demo.jsp</welcome-file>
     <welcome-file>sample.jsp</welcome-file>
   </welcome-file-list>
+
+  <!-- 404 Page -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/views/error/error404.html</location>
+  </error-page>
+
+  <!-- Error Page -->
+  <!-- <error-page>
+    <location>/general-error.html</location>
+  </error-page> -->
+
+  <!-- <jsp-config>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+      <taglib-location>/WEB-INF/lib/c.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jsp/jstl/functions</taglib-uri>
+      <taglib-location>/WEB-INF/lib/fn.tld</taglib-location>
+    </taglib>
+  </jsp-config> -->
 </web-app>
