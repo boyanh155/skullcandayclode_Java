@@ -1,7 +1,7 @@
 package com.k19.models;
 
 public class member {
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String username;
@@ -12,6 +12,17 @@ public class member {
     private String gentle;
     private String fullName;
     // create_on and last_login are hidden
+
+    public member() {
+        firstName = "";
+        lastName = "";
+        username = "";
+        password = "";
+        email = "";
+        contact = "";
+        gentle = "";
+        fullName = "";
+    }
 
     public String getContact() {
         return contact;
@@ -37,7 +48,7 @@ public class member {
         this.fullName = fullName;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

@@ -18,9 +18,10 @@ import="java.sql.*"
         </head>
 
         <body>
-            <form action="<%=request.getContextPath()%>/sign-in/confirm" method="post">
+            <form action="<%=request.getContextPath()%>/member/sign-in/confirm" method="post">
+                <input type="hidden" name="action" value="submit">
                 <div class="imgcontainer">
-                    <img src="https://lh3.googleusercontent.com/proxy/TkyCKvBiO_7Ng_l_LWVX2rGZ-Tb_CF0chlx6lA9JqRGwY-U9lLjTPDIVG7Mu2Ko14o7w8BYJBfs147PxpiXFDtG4M6AaiEiQGlpEhnt1gZFAye_o8oe5Gg-aSt139kxmHo4_h3UDVA" alt="Avatar" class="avatar">
+                    <img src="${pageContext.request.contextPath}/resource/assets/img/member/login/avt.png" alt="Avatar" class="avatar">
                 </div>
 
                 <div class="container">
@@ -29,7 +30,9 @@ import="java.sql.*"
 
                     <label for="psw"><b>Password</b></label>
                     <input id="psw" type="password" placeholder="Enter Password" name="password" required>
-
+                    <p class="announce">
+                    <c:out value="${sessionScope.message}" />
+                    </p>
                     <button type="submit">Login</button>
 
                     <!-- Maybe i will do it next time -->
@@ -44,6 +47,7 @@ import="java.sql.*"
                     <span class="psw">Forgot <a href="#">password?</a></span>
                 </div>
             </form>
+            <script src="${pageContext.request.contextPath}/resource/assets/js/login.js"></script>
         </body>
 
         </html>

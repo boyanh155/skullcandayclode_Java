@@ -15,7 +15,7 @@ import com.k19.models.member;
 import com.k19.DAO.memberDAO;
 
 // servlet mapping
-@WebServlet(name = "registerConfirmServlet", urlPatterns = { "/sign-up/confirm" })
+@WebServlet(name = "registerConfirmServlet", urlPatterns = { "/member/sign-up/confirm" })
 
 public class register extends HttpServlet {
     private memberDAO mdao;
@@ -25,13 +25,13 @@ public class register extends HttpServlet {
         this.mdao = new memberDAO();
     }
 
-    // [GET] /sign-up/confirm
+    // [GET] /member/sign-up/confirm
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp)
             throws ServletException, IOException {
         this.doPost(req, resp);
     }
 
-    // [POST] /sign-up/confirm
+    // [POST] /member/sign-up/confirm
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp)
             throws ServletException, IOException {
         String action = req.getParameter("action");
@@ -61,7 +61,7 @@ public class register extends HttpServlet {
 
             // Halo Data
             try {// try to insert value
-                this.mdao.registerMember(member);
+                this.mdao.insertMember(member);
                 req.setAttribute("user", (member) member);
                 url = "/thanks.jsp";
                 this.getServletContext().getRequestDispatcher("/WEB-INF/views" + url).forward((ServletRequest) req,
@@ -72,7 +72,7 @@ public class register extends HttpServlet {
                 e.printStackTrace();
             }
         } else if (action.equals("cancel")) {
-            resp.sendRedirect(req.getContextPath());
+            resp.sendRedirect(req.getContextPath() + "/member/sign-up");
         }
     }
 }

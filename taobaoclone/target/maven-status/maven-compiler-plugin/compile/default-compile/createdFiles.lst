@@ -1,7 +1,15 @@
+com\k19\controllers\cartServlet.class
 com\k19\DAO\memberDAO.class
-com\k19\controllers\register.class
-com\k19\utils\userService.class
 com\k19\models\member.class
+com\k19\utils\connectionPool.class
+com\k19\controllers\memberServlet.class
+com\k19\controllers\register.class
+com\k19\models\cart.class
+com\k19\utils\cookieUtil.class
 connection\postgresJDBCConnection.class
 com\k19\controllers\login.class
+com\k19\models\lineItem.class
+com\k19\controllers\memberHome.class
+com\k19\DAO\productDAO.class
+com\k19\models\product.class
 com\k19\controllers\memberNav.class

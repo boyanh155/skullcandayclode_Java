@@ -1,7 +1,15 @@
-D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\utils\userService.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\models\lineItem.java
 D:\taobaoclone_Java_main\taobaoclone\src\main\java\connection\postgresJDBCConnection.java
 D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\DAO\memberDAO.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\memberHome.java
 D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\memberNav.java
-D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\login.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\utils\connectionPool.java
 D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\register.java
 D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\models\member.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\models\product.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\cartServlet.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\models\cart.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\utils\cookieUtil.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\login.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\DAO\productDAO.java
+D:\taobaoclone_Java_main\taobaoclone\src\main\java\com\k19\controllers\memberServlet.java

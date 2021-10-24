@@ -12,7 +12,9 @@
     <h1>Sorry about this inconvenient. Pls, help us to go back by click go back button</h1>
     <button> 
         <a href="${pageContext.request.contextPath}">
-            <span>Go back</span>
+            <span>
+                Go back
+            </span>
         </a>
     </button>
 </body>

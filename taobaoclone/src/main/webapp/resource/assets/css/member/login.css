@@ -62,10 +62,6 @@ button:hover {
 
 /* Avatar image */
 
-img.avatar {
-    width: 40%;
-}
-
 
 /* Add padding to containers */
 
@@ -79,6 +75,14 @@ img.avatar {
 span.psw {
     float: right;
     padding-top: 16px;
+}
+
+#psw {
+    margin-bottom: 8px;
+}
+
+.announce {
+    float: right;
 }
 
 

@@ -1,6 +1,7 @@
 package com.k19.controllers;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -16,8 +17,9 @@ import com.k19.models.member;
 import com.k19.DAO.memberDAO;
 
 // servlet mapping
-@WebServlet(name = "loginConfirmServlet", urlPatterns = { "/sign-in/confirm" })
-
+@WebServlet(name = "loginConfirmServlet", urlPatterns = { "/member/sign-in/confirm" })
+// if first time we will doPost
+// in doPost user must login
 public class login extends HttpServlet {
 
     private memberDAO edao;
@@ -26,50 +28,75 @@ public class login extends HttpServlet {
         this.edao = new memberDAO();
     }
 
-    // [GET] /sign-in/confirm
+    // [GET] /member/sign-in/confirm
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp)
             throws ServletException, IOException {
         this.doPost(req, resp);
     }
 
-    // [POST] /sign-in/confirm
+    // [POST] /member/sign-in/confirm
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        // action
+        String action = req.getParameter("action");
         // get info
         String uname = req.getParameter("username");
         String passwd = req.getParameter("password");
 
-        final member member = new member();
-        member.setUsername(uname);
-        member.setPassword(passwd);
-
-        // Halo Data
-        try {
-            if (this.edao.loginMember(member)) {
+        String mess = null;
+        if (action == null) {
+            action = "cancel";
+        }
+        if (action.equals("cancel")) {
+            resp.sendRedirect(req.getContextPath() + "/member/sign-in");
+        } else if (action.equals("submit")) {
+            final member member = memberDAO.checkMember(uname, passwd);
+            // check member
+            if (member != null) {
                 // valid
                 // set session
                 HttpSession session = req.getSession();
                 session.setAttribute("username", uname);
-                req.setAttribute("user", (member) member);
+                req.setAttribute("member", member);
                 // create cookies
-                Cookie cookie = new Cookie("username", uname);
-                cookie.setMaxAge(60 * 60 * 24);
-                cookie.setPath("/");
-                resp.addCookie(cookie);
+                Cookie cookiea = new Cookie("usernameCookie", uname);
+                cookiea.setMaxAge(60 * 60 * 24);
+                cookiea.setPath("/");
+                resp.addCookie(cookiea);
 
+                String sid = session.getId();
+                Cookie cookieb = new Cookie("sessionIDCookie", sid);
+                cookieb.setMaxAge(60 * 60 * 24);
+                cookieb.setPath("/");
+                resp.addCookie(cookieb);
+
+                mess = "Success Login";
                 // change it to Home
                 String url = "/ownhome.jsp";
+                session.setAttribute("message", mess);
                 getServletContext().getRequestDispatcher("/WEB-INF/views/member" + url).forward((ServletRequest) req,
                         (ServletResponse) resp);
             } else {
-                // invalid
-                // HttpSession session = req.getSession();
-                // session.setAttribute("user", username);
-                resp.sendRedirect(req.getContextPath() + "/sign-in");
+                // invalid password
+                // try to get latest data
+                HttpSession session = req.getSession();
+                try {
+                    if (memberDAO.selectMember(uname) != null) {
+                        String user = uname;
+                        mess = "Wrong password, You are " + user + " ?";
+                    } else {
+                        mess = "We can not define you on my server, You are new ?";
+                    }
+                    session.setAttribute("message", mess);
+                    // resp.sendRedirect(req.getContextPath() + "/member/sign-in");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    session.setAttribute("message", "Server error, try again");
+                }
+                resp.sendRedirect(req.getContextPath() + "/member/sign-in");
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+
         }
+        //
 
     }
 }

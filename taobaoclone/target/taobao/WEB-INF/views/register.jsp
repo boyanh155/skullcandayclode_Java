@@ -20,7 +20,7 @@
             <div class="Employee-Form col-8 ml-a mr-a">
                 <div class="text-left">Welcome to my team . We have 2 admins included Hoang Loc and Thai Hung</div>
                 <!-- <%-- <div><p>${pageContext.request.contextPath}</p></div> --%> -->
-                <form action="<%=request.getContextPath()%>/sign-up/confirm" method="POST" id="registerForm">
+                <form action="<%=request.getContextPath()%>/member/sign-up/confirm" method="POST" id="registerForm">
                     <input type="hidden" name="action" value="submit">
 
                     <div class="form-row mt-4 align-center justify-content-center">
